@@ -4,7 +4,7 @@ import { Hero, Contribute, Billing, Invoice } from './Components'
 function App() {
   return (
     <>
-      <Billing />
+      <Invoice />
     </>
   );
 }

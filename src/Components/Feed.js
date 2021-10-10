@@ -14,7 +14,7 @@ const FeedItem = (contributor) => {
                     <h1 className="text-sm font-normal text-gray-400">joined the celebration! 🎉</h1>
                     <p className="text-sm text-gray-500">
                         {contributor.contributions.map((c) => (
-                            <p>contributed <span style={{"color": "blue"}}>{c.amt}</span> to {c.item} preparation!</p>
+                            <p>contributed <span className="text-indigo-500">{c.amt}</span> to {c.item} preparation!</p>
                         ))}
                     </p>
                 </div>

@@ -14,22 +14,26 @@ const products = [
       imageAlt: 'Glass bottle with black plastic pour top and mesh insert.',
     },
   ]
+
+function print(e) {
+    window.print();
+}
   
   export default function Example() {
     return (
       <div className="bg-white">
-        <div className="max-w-3xl mx-auto px-4 py-16 sm:px-6 sm:py-12 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 py-16 sm:px-6 sm:py-12 lg:px-8 flex flex-col items-center">
           <div className="max-w-xl">
-            <h1 className="text-sm font-semibold uppercase tracking-wide text-indigo-600">Thank you for your contribution</h1>
-            <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">Mark the Date! - 29 Oct</p>
-            <p className="mt-2 text-base text-gray-500">We look forward to seeing you soon!</p>
+            <h1 className="text-sm font-semibold uppercase tracking-wide text-indigo-600 text-center">Thank you for your contribution</h1>
+            <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl text-center">Mark the Date!</p>
+            <p className="mt-2 text-base text-gray-500 text-center">We look forward to seeing you soon!</p>
           </div>
 
           <div className="mt-8 w-full flex flex-col items-center">
             <Invite />
           </div>
   
-          <div className="mt-10 border-t border-gray-200">
+          <div className="my-24 p-8 pt-0 border border-gray-300">
             <h2 className="sr-only">Your order</h2>
   
             <h3 className="sr-only">Items</h3>
@@ -125,7 +129,10 @@ const products = [
               </dl>
             </div>
           </div>
+          
+          <button className="mb-40 w-full px-8 py-3 max-w-sm bg-indigo-500 rounded-full text-white font-semibold text-lg" onClick={print}>Print Me</button>
         </div>
+
       </div>
     )
   }
