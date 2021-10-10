@@ -1,8 +1,10 @@
-import { Nav } from './'
+import { Nav, MetaDecorator } from './'
 
 
 export default function Example() {
   return (
+      <>
+        <MetaDecorator description="Diwali Celebration in Amsterdam!" title="Diwali 2021 Amsterdam" imgUrl="/Diwali/sitaram.jpeg" imgAlt="Diwali Celebration in Amsterdam!"/>
     <div className="relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-0 h-full xl:h-screen bg-white sm:pb-16 md:pb-20 xl:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -100,5 +102,6 @@ export default function Example() {
         />
       </div>
     </div>
+    </>
   )
 }

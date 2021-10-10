@@ -59,7 +59,7 @@ export default function Nav() {
                   <div>
                     <img
                       className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                      src="./Diwali/logo2.png"
                       alt=""
                     />
                   </div>

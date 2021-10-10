@@ -6,5 +6,6 @@ import Feed from './Feed';
 import Billing from './Billing';
 import Invoice from './Invoice';
 import Invite from './Invite';
+import MetaDecorator from './MetaDecorator';
 
-export { Hero, ContributeCard, Contribute, Nav, Feed, Billing, Invoice, Invite };
+export { Hero, ContributeCard, Contribute, Nav, Feed, Billing, Invoice, Invite, MetaDecorator };

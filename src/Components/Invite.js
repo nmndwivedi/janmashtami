@@ -10,7 +10,7 @@ import {
     WhatsappIcon,
   } from "react-share";
 
-const shareUrl = 'https://www.diwali2021.nl';
+const shareUrl = 'https://diwali2021.nl';
 const title = 'Diwali Celebration in Amsterdam!';
 
 export default function Invite() {
