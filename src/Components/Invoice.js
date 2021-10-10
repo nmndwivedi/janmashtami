@@ -24,9 +24,9 @@ function print(e) {
       <div className="bg-white">
         <div className="max-w-3xl mx-auto px-4 py-16 sm:px-6 sm:py-12 lg:px-8 flex flex-col items-center">
           <div className="max-w-xl">
-            <h1 className="text-sm font-semibold uppercase tracking-wide text-indigo-600 text-center">Thank you for your contribution</h1>
-            <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl text-center">Mark the Date!</p>
-            <p className="mt-2 text-base text-gray-500 text-center">We look forward to seeing you soon!</p>
+            <h1 className="text-lg font-semibold uppercase tracking-wide text-indigo-600 text-center">Thank you for your contribution</h1>
+            {/* <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl text-center">Mark the Date!</p> */}
+            <p className="mt-1 font-semibold text-gray-500 text-center">We look forward to seeing you soon!</p>
           </div>
 
           <div className="mt-8 w-full flex flex-col items-center">

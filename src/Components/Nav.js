@@ -5,8 +5,8 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Contribute', href: '/contribute' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Newsletter', href: '/newsletter' },
+    { name: 'About', href: 'https://iskconamsterdam.nl/' },
+    { name: 'Newsletter', href: 'https://us4.list-manage.com/subscribe?u=1ba7abc2577d7df82c57bb917&id=c90ede89a2' },
 ]
 
 export default function Nav() {

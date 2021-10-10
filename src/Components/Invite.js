@@ -26,14 +26,14 @@ export default function Invite() {
                     </div>
                 </div>
                 
-                <p class="text-gray-700 text-xl">
-                    <p>Date: 29 October, 2021</p>
-                    <p>Venue: </p>
+                <p className="text-gray-700 text-lg mb-4">
+                    <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">29 October, 2021 | 6:00-10:00 PM</span></p>
+                    <p className="text-lg font-semibold text-red-600">Venue: <span className="text-gray-700 font-normal text-sm">Oasis Party & Events, Industrieweg 20, 1422AJ Uithoorn, NL</span></p>
                 </p>
 
                 <p class="text-gray-700 text-xl text-right mb-4">
                     <p>Naman Dwivedi</p>
-                    <p className="text-gray-500 font-light">Contribution Amount: <span className="text-indigo-500 font-normal">€108</span></p>
+                    <p className="text-gray-500 font-light">Contribution Amount: <span className="">€108</span></p>
                 </p>
 
                 <p class="text-gray-400 text-sm text-center mb-2">
