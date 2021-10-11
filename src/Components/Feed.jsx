@@ -12,11 +12,11 @@ const FeedItem = (contributor) => {
                         <p className="text-sm text-gray-500">{contributor.time}</p>
                     </div>
                     <h1 className="text-sm font-normal text-gray-400">joined the celebration! 🎉</h1>
-                    <p className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500">
                         {contributor.contributions.map((c) => (
-                            <p>contributed <span className="text-indigo-500">{c.amt}</span> to {c.item} preparation!</p>
+                            <p key={c.item}>contributed <span className="text-indigo-500">{c.amt}</span> to {c.item} preparation!</p>
                         ))}
-                    </p>
+                    </div>
                 </div>
             </div>
         </li>
@@ -26,7 +26,7 @@ const FeedItem = (contributor) => {
   export default function Feed({ contributors }) {
     return (
       <div>
-        <ul role="list" className="divide-y divide-gray-200">
+        <ul className="divide-y divide-gray-200">
           {contributors.map((contributor) => (
               FeedItem(contributor)
           ))}
