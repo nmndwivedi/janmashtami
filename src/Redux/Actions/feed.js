@@ -1,8 +1,8 @@
-import { ActionTypes } from '../Types/action-types'
+import { Types } from '../types'
 
 export const setFeed = (donors) => {
     return {
-        type: ActionTypes.SET_FEED,
+        type: Types.SET_FEED,
         payload: donors
     }
 }

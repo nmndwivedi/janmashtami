@@ -1,16 +1,16 @@
 import { Types } from '../types'
 
 const init = {
-    donors: []
+    items: []
 }
 
-const feed = (state = init, { type, payload }) => {
+const catalog = (state = init, { type, payload }) => {
     switch (type) {
-        case Types.SET_FEED:
+        case Types.SET_CATALOG:
             return state;
         default:
             return state;
     }
 }
 
-export default feed;
+export default catalog;

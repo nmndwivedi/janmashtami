@@ -1,14 +1,14 @@
-import { ActionTypes } from '../Types/action-types'
+import { Types } from '../types'
 
 export const setCart = (items) => {
     return {
-        type: ActionTypes.SET_CART,
+        type: Types.SET_CART,
         payload: items
     }
 }
 
 export const clearCart = () => {
     return {
-        type: ActionTypes.CLEAR_CART
+        type: Types.CLEAR_CART
     }
 }
