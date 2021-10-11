@@ -1,85 +1,77 @@
-import { ContributeCard, Nav, Feed } from './'
+import { ContributeCard, Nav, Feed } from '../Components'
 
 const products = [
     {
+        id: 0,
         name: '🪞 Deity Shringaar',
         image: {
-            id: 1,
             imageSrc: './Diwali/Deities 3.jpeg',
             imageAlt: "Ornaments and clothing for the Deities",
-            primary: true,
         },
         description: `<p>Ornaments and clothing for the Deities</p>`
     },
     {
+        id: 1,
         name: '🪔 Diyas',
         image: {
-            id: 1,
             imageSrc: './Diwali/Diyas.jpeg',
-            imageAlt: "Diyas (ghee lamps) to honour the deities",
-            primary: true,
+            imageAlt: "Diyas (ghee lamps) to honour the Deities",
         },
-        description: `<p>Diyas (ghee lamps) to honour the deities</p>`
+        description: `<p>Diyas (ghee lamps) to honour the Deities</p>`
     },
     {
+        id: 2,
         name: '🥧 Prasadam',
         image: {
-            id: 1,
             imageSrc: './Diwali/Prasadam.jpeg',
             imageAlt: "Delicious vegetarian food prepared and offered to the Lord",
-            primary: true,
         },
         description: `<p>Delicious vegetarian food prepared and offered to the Lord</p>`
     },
     {
+        id: 3,
         name: '🏟 Venue',
         image: {
-            id: 1,
             imageSrc: './Diwali/Venue.jpeg',
             imageAlt: "Reservation of a spacious venue for the event",
-            primary: true,
         },
         description: `<p>Reservation of a spacious venue for the event</p>`
     },
     {
+        id: 4,
         name: '💐 Flowers',
         image: {
-            id: 1,
             imageSrc: './Diwali/Flowers.jpeg',
-            imageAlt: "Flowers for the deities and hall decorations",
-            primary: true,
+            imageAlt: "Flowers for the Deities and hall decorations",
         },
-        description: `<p>Flowers for the deities and hall decorations</p>`
+        description: `<p>Flowers for the Deities and hall decorations</p>`
     },
     {
+        id: 5,
         name: '⛰ Govardhan Puja',
         image: {
-            id: 1,
             imageSrc: './Diwali/Govardhan 2.jpeg',
             imageAlt: "Govardhan hill preparation for puja offering",
-            primary: true,
         },
         description: `<p>Govardhan hill preparation for puja offering</p>`
     },
     {
+        id: 6,
         name: '🙏🏻 Arati',
         image: {
-            id: 1,
             imageSrc: './Diwali/Arati.jpeg',
             imageAlt: "Arati offering to the Deities",
-            primary: true,
         },
         description: `<p>Arati offering to the Deities</p>`
     },
     {
-        name: '🧩 Misc',
+        id: 7,
+        name: '🧩 Miscellaneous',
         image: {
-            id: 1,
             imageSrc: './Diwali/Misc.jpeg',
-            imageAlt: "Miscellaneous items that pop up last moment",
-            primary: true,
+            imageAlt: "Items that dont fit in other categories",
         },
-        description: `<p>Miscellaneous items that pop up last moment</p>`
+        description: `<p>Items that dont fit in other categories</p>`
     }
 ];
 

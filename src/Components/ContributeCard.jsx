@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
+import { NumFmt } from '../Utils'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const denominations = ['€10', '€20', '€50', '€108', '€256', '€501', '€1001'];
+const denominations = [10, 20, 50, 108, 256, 501, 1001];
 
 function ProgressBar() {
     return (
@@ -97,7 +98,7 @@ export default function ContributeCard({ product }) {
                             )
                           }
                         >
-                          <RadioGroup.Label as="p">{denom}</RadioGroup.Label>
+                          <RadioGroup.Label as="p">{NumFmt(denom)}</RadioGroup.Label>
                         </RadioGroup.Option>
                       ))}
 

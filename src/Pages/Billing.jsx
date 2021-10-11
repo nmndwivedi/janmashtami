@@ -1,5 +1,4 @@
 import { Disclosure } from '@headlessui/react'
-import { LockClosedIcon } from '@heroicons/react/solid'
 
 const total = '$141.92'
 const products = [
@@ -26,7 +25,7 @@ const products = [
   // More products...
 ]
 
-export default function Example() {
+export default function Billing() {
   return (
     <div className="bg-white">
       <main className="lg:min-h-screen lg:overflow-hidden lg:flex lg:flex-row-reverse">

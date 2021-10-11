@@ -9,11 +9,12 @@ import {
     LinkedinIcon,
     WhatsappIcon,
   } from "react-share";
+import { NumFmt } from '../Utils'
 
 const shareUrl = 'https://diwali2021.nl';
-const title = 'Diwali Celebration in Amsterdam!';
+const title = 'Diwali Celebration in Amsterdam! #Diwali2021 #ISKCON';
 
-export default function Invite() {
+export default function Invite({ name, number, amount }) {
     return (
         <div class="max-w-lg rounded-2xl overflow-hidden shadow-lg">
             <img class="w-full" src="./Diwali/sitaram.jpeg" alt="Mountain" />
@@ -32,8 +33,8 @@ export default function Invite() {
                 </p>
 
                 <p class="text-gray-700 text-xl text-right mb-4">
-                    <p>Naman Dwivedi</p>
-                    <p className="text-gray-500 font-light">Contribution Amount: <span className="">€108</span></p>
+                    <p>{name}(+{number})</p>
+                    <p className="text-gray-500 font-light">Contribution Amount: <span className="">{NumFmt(amount)}</span></p>
                 </p>
 
                 <p class="text-gray-400 text-sm text-center mb-2">
@@ -43,9 +44,9 @@ export default function Invite() {
             </div>
 
             <div class="px-6 pt-1 pb-2">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#diwali2021</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Rama</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#iskcon</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Diwali2021</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Amsterdam</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ISKCON</span>
             </div>
 
             <div className="w-full flex justify-end mb-4 px-4 items-center">
