@@ -49,15 +49,24 @@ function ProgressBar({ prog, goal }) {
   );
 }
 
+function getInitialSelectionType(val, arr) {
+  if(!val) return 'none';
+  else if(arr.includes(val)) return 'radio';
+  else if(val > 0) return 'custom';
+  else return 'none';
+}
+
 export default function ContributeCard({
   product,
   last,
   progress,
+  initialSelection = 0,
   onAddToCart,
   onRemoveFromCart,
 }) {
-  const [radioAmount, setRadioAmount] = useState("");
-  const [customAmt, setCustomAmount] = useState("");
+  const initType = getInitialSelectionType(initialSelection, denominations);
+  const [radioAmount, setRadioAmount] = useState(initType==='radio'?initialSelection:"");
+  const [customAmt, setCustomAmount] = useState(initType==='custom'?initialSelection:"");
 
   const checkUnselect = (v) => {
     if (radioAmount.toString() === v.target.innerText.replace("€", "")) {

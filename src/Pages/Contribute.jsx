@@ -59,6 +59,7 @@ export default function Contribute() {
                 product={p}
                 last={products.indexOf(p) === products.length - 1}
                 progress={progress.find((i) => i.id === p.id)}
+                initialSelection={cart.find((i) => i.id === p.id)?.amount}
                 onAddToCart={handleAddToCart}
                 onRemoveFromCart={handleRemoveFromCart}
               />

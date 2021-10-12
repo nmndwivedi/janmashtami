@@ -19,7 +19,7 @@ const init = {
         },
         {
             id: 3,
-            progress: 90,
+            progress: 0,
             goal: 1000,
         },
         {
