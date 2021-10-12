@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
+import { Link } from "react-router-dom";
 import { NumFmt } from "../Utils";
 
 function classNames(...classes) {
@@ -14,32 +15,33 @@ function colorClass(p) {
 
 const denominations = [10, 20, 50, 108, 256, 501, 1001];
 
-function ProgressBar({ prog }) {
-  prog = Math.min(Math.max(prog, 7), 100);
+function ProgressBar({ prog, goal }) {
+  const perc = Math.min(Math.max((prog * 100) / goal, 7), 1000);
+  let progress = (goal * perc) / 100;
 
   return (
     <div className="relative pt-5 px-4">
       <div className="flex mb-2 items-center justify-between">
         <div>
           <span className="text-xs font-medium inline-block py-1 px-2 uppercase rounded-full text-gray-600 bg-gray-200">
-            Progress €300 | Target €1001
+            Progress {NumFmt(progress)} | Target {NumFmt(goal)}
           </span>
         </div>
         <div className="text-right">
           <span
             className={`text-xs font-semibold inline-block text-${colorClass(
-              prog
+              perc
             )}`}
           >
-            {prog}%
+            {perc}% of goal met
           </span>
         </div>
       </div>
       <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
         <div
-          style={{ width: prog + "%" }}
+          style={{ width: perc + "%" }}
           className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-${colorClass(
-            prog
+            perc
           )}`}
         ></div>
       </div>
@@ -47,8 +49,37 @@ function ProgressBar({ prog }) {
   );
 }
 
-export default function ContributeCard({ product }) {
-  const [selectedDenom, setSelectedDenom] = useState(denominations[3]);
+export default function ContributeCard({
+  product,
+  last,
+  progress,
+  onAddToCart,
+  onRemoveFromCart,
+}) {
+  const [radioAmount, setRadioAmount] = useState("");
+  const [customAmt, setCustomAmount] = useState("");
+
+  const checkUnselect = (v) => {
+    if (radioAmount.toString() === v.target.innerText.replace("€", "")) {
+      if (radioAmount !== "") onRemoveFromCart(product.id);
+      setRadioAmount("");
+    }
+  };
+
+  const handleAmountInput = (value, std) => {
+    if (std) {
+      setRadioAmount(value);
+      setCustomAmount("");
+      onAddToCart(product.id, value);
+    } else {
+      setRadioAmount("");
+      setCustomAmount(value);
+      if (value === "" || parseInt(value) === NaN || parseInt(value) === 0) {
+        onRemoveFromCart(product.id);
+        return;
+      } else onAddToCart(product.id, parseInt(value));
+    }
+  };
 
   return (
     <div className="bg-white max-w-4xl rounded-3xl">
@@ -96,13 +127,15 @@ export default function ContributeCard({ product }) {
                 </div>
 
                 <RadioGroup
-                  value={selectedDenom}
-                  onChange={setSelectedDenom}
+                  value={radioAmount}
+                  onChange={(v) => handleAmountInput(v, true)}
+                  onClick={checkUnselect}
                   className="mt-2"
                 >
                   <RadioGroup.Label className="sr-only">
                     Choose amount
                   </RadioGroup.Label>
+
                   <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
                     {denominations.map((denom, i) => (
                       <RadioGroup.Option
@@ -112,7 +145,7 @@ export default function ContributeCard({ product }) {
                           classNames(
                             "cursor-pointer focus:outline-none",
                             active
-                              ? "ring-2 ring-offset-2 ring-indigo-500"
+                              ? "ring-1 ring-offset-1 ring-indigo-600"
                               : "",
                             checked
                               ? "bg-indigo-600 border-transparent text-white hover:bg-indigo-700"
@@ -128,34 +161,51 @@ export default function ContributeCard({ product }) {
                     ))}
 
                     <div className="mt-0">
+                      {/* <span class="flex items-center">
+                        or € */}
                       <input
                         type="number"
+                        min="1"
                         name="amount"
                         id="amount"
-                        className="h-12 w-40 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-200 rounded-md"
+                        className={`h-12 w-40 shadow-sm bg-${
+                          customAmt === "" ? "white" : "indigo-500"
+                        } text-white block sm:text-sm border-gray-200 rounded-md`}
                         placeholder="other amount(€)"
+                        value={customAmt}
+                        onChange={(e) =>
+                          handleAmountInput(e.target.value, false)
+                        }
                       />
+                      {/* </span> */}
                     </div>
                   </div>
                 </RadioGroup>
 
-                <ProgressBar prog={product.progress} />
+                <ProgressBar prog={progress.progress} goal={progress.goal} />
               </div>
 
               <div className="mt-7 flex justify-around space-x-2">
-                <button
-                  type="submit"
-                  className="w-1/3 bg-white border border-indigo-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-600 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Checkout
-                </button>
+                  <Link
+                    to="/checkout"
+                    className={`w-${last ? "full" : "1/3"} bg-${
+                      last ? "pink-600" : "white"
+                    } border border-pink-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-${
+                      !last ? "pink-600" : "white"
+                    } hover:bg-${
+                      last ? "pink-700" : "pink-100"
+                    } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}
+                  >
+                    Checkout
+                  </Link>
 
-                <button
-                  type="submit"
-                  className="w-1/2 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                <div
+                  className={`${
+                    last ? "hidden" : ""
+                  } w-1/2 bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}
                 >
                   Next Item
-                </button>
+                </div>
               </div>
             </form>
           </div>

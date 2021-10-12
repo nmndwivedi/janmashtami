@@ -1,9 +1,43 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { ContributeCard, Nav, Feed } from "../Components";
-import { useSelector } from "react-redux";
+import { setProgress } from "../Redux/Actions/progress";
+import { updateCart } from "../Redux/Actions/cart";
 
 export default function Contribute() {
+  //Offline
   const products = useSelector((state) => state.catalog.items);
+  const cart = useSelector((state) => state.cart.items);
+  //Online
+  const progress = useSelector((state) => state.progress.items);
   const contributors = useSelector((state) => state.feed.donors);
+  //Dispatch
+  const d = useDispatch();
+
+  //   // TODO Add link from firebase
+  //   useEffect(() => {
+  //     const fetchCatalog = async () => {
+  //       const newItems = [];
+
+  //       if (newItems && newItems.length > 0) disp(setCatalog(newItems));
+  //     };
+
+  //     fetchCatalog();
+  //   }, [disp]);
+
+  const handleAddToCart = (id, amount) => {
+    let newCart = cart.filter((s) => s.id !== id);
+    let newItem = products.find((p) => p.id === id);
+    newCart.push({ id, amount, details: newItem });
+
+    d(updateCart(newCart));
+  };
+
+  const handleRemoveFromCart = (id) => {
+    let newCart = cart.filter((s) => s.id !== id);
+
+    d(updateCart(newCart));
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -20,7 +54,14 @@ export default function Contribute() {
         <main className="flex">
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-48 flex flex-col items-center xl:items-start space-y-12">
             {products.map((p) => (
-              <ContributeCard key={p.id} product={p} />
+              <ContributeCard
+                key={p.id}
+                product={p}
+                last={products.indexOf(p) === products.length - 1}
+                progress={progress.find((i) => i.id === p.id)}
+                onAddToCart={handleAddToCart}
+                onRemoveFromCart={handleRemoveFromCart}
+              />
             ))}
           </div>
 

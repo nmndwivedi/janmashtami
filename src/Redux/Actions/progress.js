@@ -1,8 +1,8 @@
 import { Types } from '../types'
 
-export const setCatalog = (items) => {
+export const setProgress = (items) => {
     return {
-        type: Types.SET_CATALOG,
+        type: Types.SET_PROGRESS,
         payload: items
     }
 }

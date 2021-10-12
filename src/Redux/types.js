@@ -1,6 +1,6 @@
 export const Types = {
-    SET_CART: "SET_CART",
+    UPDATE_CART: "UPDATE_CART",
     CLEAR_CART: "CLEAR_CART",
-    SET_CATALOG: "SET_CATALOG",
+    SET_PROGRESS: "SET_PROGRESS",
     SET_FEED: "SET_FEED"
 }

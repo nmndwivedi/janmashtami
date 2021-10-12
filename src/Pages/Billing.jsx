@@ -1,4 +1,6 @@
-import { Disclosure } from '@headlessui/react'
+import { useState } from 'react';
+import { Disclosure, Switch } from '@headlessui/react';
+import { useSelector } from 'react-redux';
 
 const total = '$141.92'
 const products = [
@@ -24,6 +26,35 @@ const products = [
     }
   // More products...
 ]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ');
+}
+
+function Toggle() {
+  const [enabled, setEnabled] = useState(false);
+
+  return (
+    <Switch
+      checked={enabled}
+      onChange={setEnabled}
+      className={classNames(
+        enabled ? 'bg-indigo-600' : 'bg-gray-200',
+        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+      )}
+    >
+      <span className="sr-only">Use setting</span>
+      <span
+        aria-hidden="true"
+        className={classNames(
+          enabled ? 'translate-x-5' : 'translate-x-0',
+          'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200'
+        )}
+      />
+    </Switch>
+  )
+}
+
 
 export default function Billing() {
   return (
@@ -145,8 +176,7 @@ export default function Billing() {
           </h2>
 
           <div className="max-w-lg mx-auto lg:pt-16">
-            Enter your details so we can contact you
-
+            <span className="text-gray-500">Enter your details so we can send you a reminder before the event</span>
             <form className="mt-6">
                 <div className="grid grid-cols-12 gap-y-6 gap-x-4">
                     <div className="col-span-full">
@@ -191,6 +221,31 @@ export default function Billing() {
                             autoComplete="tel"
                             className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
+                        </div>
+                    </div>
+
+                    <div className="col-span-full">
+                        <label htmlFor="contact-number" className="block text-sm font-medium text-gray-700">
+                        How many other people will you join with?
+                        </label>
+                        <div className="mt-1">
+                        <input
+                            type="number"
+                            id="guests"
+                            min="0"
+                            name="guests"
+                            autoComplete="tel"
+                            className="block w-1/6 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
+                        </div>
+                    </div>
+
+                    <div className="col-span-full flex items-center">
+                        <label htmlFor="contact-number" className="block text-sm font-medium text-gray-700">
+                        Make your donation anonymous?
+                        </label>
+                        <div className="mt-1 ml-3">
+                          <Toggle />
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 import { Types } from '../types'
 
-export const setCart = (items) => {
+export const updateCart = (items) => {
     return {
-        type: Types.SET_CART,
+        type: Types.UPDATE_CART,
         payload: items
     }
 }

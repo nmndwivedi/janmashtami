@@ -5,7 +5,6 @@ const init = {
         {
             id: 0,
             name: '🪞 Deity Shringaar',
-            progress: 40,
             image: {
                 imageSrc: './Diwali/Deities 3.jpeg',
                 imageAlt: "Ornaments and clothing for the Deities",
@@ -15,7 +14,6 @@ const init = {
         {
             id: 1,
             name: '🪔 Diyas',
-            progress: 30,
             image: {
                 imageSrc: './Diwali/Diyas.jpeg',
                 imageAlt: "Diyas (ghee lamps) to honour the Deities",
@@ -25,7 +23,6 @@ const init = {
         {
             id: 2,
             name: '🥧 Prasadam',
-            progress: 0,
             image: {
                 imageSrc: './Diwali/Prasadam.jpeg',
                 imageAlt: "Delicious vegetarian food prepared and offered to the Lord",
@@ -35,7 +32,6 @@ const init = {
         {
             id: 3,
             name: '🏟 Venue',
-            progress: 90,
             image: {
                 imageSrc: './Diwali/Venue.jpeg',
                 imageAlt: "Reservation of a spacious venue for the event",
@@ -45,7 +41,6 @@ const init = {
         {
             id: 4,
             name: '💐 Flowers',
-            progress: 0,
             image: {
                 imageSrc: './Diwali/Flowers.jpeg',
                 imageAlt: "Flowers for the Deities and hall decorations",
@@ -55,7 +50,6 @@ const init = {
         {
             id: 5,
             name: '⛰ Govardhan Puja',
-            progress: 0,
             image: {
                 imageSrc: './Diwali/Govardhan 2.jpeg',
                 imageAlt: "Govardhan hill preparation for puja offering",
@@ -65,7 +59,6 @@ const init = {
         {
             id: 6,
             name: '🙏🏻 Arati',
-            progress: 0,
             image: {
                 imageSrc: './Diwali/Arati.jpeg',
                 imageAlt: "Arati offering to the Deities",
@@ -75,7 +68,6 @@ const init = {
         {
             id: 7,
             name: '🧩 Miscellaneous',
-            progress: 0,
             image: {
                 imageSrc: './Diwali/Misc.jpeg',
                 imageAlt: "Items that dont fit in other categories",
@@ -88,7 +80,7 @@ const init = {
 const catalog = (state = init, { type, payload }) => {
     switch (type) {
         case Types.SET_CATALOG:
-            return state;
+            return {...state, items: payload};
         default:
             return state;
     }
