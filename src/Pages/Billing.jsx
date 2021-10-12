@@ -1,31 +1,9 @@
 import { useState } from 'react';
 import { Disclosure, Switch } from '@headlessui/react';
 import { useSelector } from 'react-redux';
+import { NumFmt } from '../Utils';
 
 const total = '$141.92'
-const products = [
-    {
-      id: 1,
-      name: 'Mountain Mist Artwork Tee',
-      href: '#',
-      price: '$36.00',
-      color: 'Birch',
-      size: 'L',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/checkout-form-04-product-01.jpg',
-      imageAlt: 'Off-white t-shirt with circular dot illustration on the front of mountain ridges that fade.',
-    },
-    {
-      id: 1,
-      name: 'Mountain Mist Artwork Tee',
-      href: '#',
-      price: '$36.00',
-      color: 'Birch',
-      size: 'L',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/checkout-form-04-product-01.jpg',
-      imageAlt: 'Off-white t-shirt with circular dot illustration on the front of mountain ridges that fade.',
-    }
-  // More products...
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -57,6 +35,10 @@ function Toggle() {
 
 
 export default function Billing() {
+  const cart = useSelector((state) => state.cart.items);
+
+  
+
   return (
     <div className="bg-white">
       <main className="lg:min-h-screen lg:overflow-hidden lg:flex lg:flex-row-reverse">
@@ -78,19 +60,17 @@ export default function Billing() {
 
                 <Disclosure.Panel>
                   <ul className="divide-y divide-gray-200 border-b border-gray-200">
-                    {products.map((product) => (
+                    {cart.map((product) => (
                       <li key={product.id} className="flex py-6 space-x-6">
                         <img
-                          src={product.imageSrc}
-                          alt={product.imageAlt}
+                          src={product.details.image.imageSrc}
+                          alt={product.details.image.imageAlt}
                           className="flex-none w-40 h-40 object-center object-cover bg-gray-200 rounded-md"
                         />
                         <div className="flex flex-col justify-between space-y-4">
                           <div className="text-sm font-medium space-y-1">
-                            <h3 className="text-gray-900">{product.name}</h3>
-                            <p className="text-gray-900">{product.price}</p>
-                            <p className="text-gray-500">{product.color}</p>
-                            <p className="text-gray-500">{product.size}</p>
+                            <h3 className="text-gray-900">{product.details.name}</h3>
+                            <p className="text-gray-900 font-normal">Your contribution:  {NumFmt(product.amount)}</p>
                           </div>
                           <div className="flex space-x-4">
                             <button type="button" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
@@ -127,19 +107,17 @@ export default function Billing() {
           </h2>
 
           <ul className="divide-y divide-gray-200 px-6">
-            {products.map((product) => (
+            {cart.map((product) => (
               <li key={product.id} className="flex py-6 space-x-6">
                 <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
-                  className="flex-none w-40 h-40 object-center object-cover bg-gray-200 rounded-md"
+                  src={product.details.image.imageSrc}
+                  alt={product.details.image.imageAlt}
+                  className="flex-none w-20 h-20 object-center object-cover bg-gray-200 rounded-md"
                 />
                 <div className="flex flex-col justify-between space-y-4">
                   <div className="text-sm font-medium space-y-1">
-                    <h3 className="text-gray-900">{product.name}</h3>
-                    <p className="text-gray-900">{product.price}</p>
-                    <p className="text-gray-500">{product.color}</p>
-                    <p className="text-gray-500">{product.size}</p>
+                    <h3 className="text-gray-900">{product.details.name}</h3>
+                    <p className="text-gray-900 font-normal">Your contribution:  {NumFmt(product.amount)}</p>
                   </div>
                   <div className="flex space-x-4">
                     <button type="button" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
