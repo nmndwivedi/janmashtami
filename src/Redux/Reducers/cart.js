@@ -8,6 +8,8 @@ const cart = (state = init, { type, payload }) => {
     switch (type) {
         case Types.UPDATE_CART:
             return { ...state, items: payload };
+        case Types.INITIALIZE_CART:
+            return { ...state, items: payload };
         case Types.CLEAR_CART:
             return { ...state, items: [] };
         default:

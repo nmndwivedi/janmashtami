@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ContributeCard, Nav, Feed } from "../Components";
 import { setProgress } from "../Redux/Actions/progress";
-import { updateCart } from "../Redux/Actions/cart";
+import { initializeCart, updateCart } from "../Redux/Actions/cart";
 
 export default function Contribute() {
   //Offline
@@ -24,6 +24,10 @@ export default function Contribute() {
 
   //     fetchCatalog();
   //   }, [disp]);
+
+  useEffect(() => {
+    d(initializeCart());
+  }, []);
 
   const handleAddToCart = (id, amount) => {
     let newCart = cart.filter((s) => s.id !== id);

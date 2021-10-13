@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import { NumFmt } from "../Utils";
@@ -50,23 +50,28 @@ function ProgressBar({ prog, goal }) {
 }
 
 function getInitialSelectionType(val, arr) {
-  if(!val) return 'none';
-  else if(arr.includes(val)) return 'radio';
-  else if(val > 0) return 'custom';
-  else return 'none';
+  if (!val) return "none";
+  else if (arr.includes(val)) return "radio";
+  else if (val > 0) return "custom";
+  else return "none";
 }
 
 export default function ContributeCard({
   product,
   last,
   progress,
-  initialSelection = 0,
+  initialSelection,
   onAddToCart,
   onRemoveFromCart,
 }) {
-  const initType = getInitialSelectionType(initialSelection, denominations);
-  const [radioAmount, setRadioAmount] = useState(initType==='radio'?initialSelection:"");
-  const [customAmt, setCustomAmount] = useState(initType==='custom'?initialSelection:"");
+  const [radioAmount, setRadioAmount] = useState("");
+  const [customAmt, setCustomAmount] = useState("");
+
+  useEffect(() => {
+    const initType = getInitialSelectionType(initialSelection, denominations);
+    setRadioAmount(initType === "radio" ? initialSelection : "");
+    setCustomAmount(initType === "custom" ? initialSelection : "");
+  }, [initialSelection]);
 
   const checkUnselect = (v) => {
     if (radioAmount.toString() === v.target.innerText.replace("€", "")) {
@@ -83,7 +88,7 @@ export default function ContributeCard({
     } else {
       setRadioAmount("");
       setCustomAmount(value);
-      if (value === "" || parseInt(value) === NaN || parseInt(value) === 0) {
+      if (value === "" || isNaN(parseInt(value)) || parseInt(value) === 0) {
         onRemoveFromCart(product.id);
         return;
       } else onAddToCart(product.id, parseInt(value));
@@ -195,18 +200,18 @@ export default function ContributeCard({
               </div>
 
               <div className="mt-7 flex justify-around space-x-2">
-                  <Link
-                    to="/checkout"
-                    className={`w-${last ? "full" : "1/3"} bg-${
-                      last ? "pink-600" : "white"
-                    } border border-pink-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-${
-                      !last ? "pink-600" : "white"
-                    } hover:bg-${
-                      last ? "pink-700" : "pink-100"
-                    } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}
-                  >
-                    Checkout
-                  </Link>
+                <Link
+                  to="/checkout"
+                  className={`w-${last ? "full" : "1/3"} bg-${
+                    last ? "pink-600" : "white"
+                  } border border-pink-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-${
+                    !last ? "pink-600" : "white"
+                  } hover:bg-${
+                    last ? "pink-700" : "pink-100"
+                  } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}
+                >
+                  Checkout
+                </Link>
 
                 <div
                   className={`${

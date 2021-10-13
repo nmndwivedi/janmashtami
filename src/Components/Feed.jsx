@@ -23,7 +23,7 @@ const FeedItem = (contributor) => {
             <div className="text-sm text-gray-500">
               <span className="text-gray-400">and contributed...</span>
               {contributor.contributions.map((c) => (
-                <p key={c.item} className="mt-1">
+                <p key={contributor.contributions.indexOf(c)} className="mt-1">
                   {" "}
                   <span className="text-indigo-500">{c.amt}</span> to {c.item}{" "}
                   preparation!
