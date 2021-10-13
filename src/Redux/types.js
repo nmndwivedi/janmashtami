@@ -4,5 +4,6 @@ export const Types = {
     SAVE_CART: "SAVE_CART",
     CLEAR_CART: "CLEAR_CART",
     SET_PROGRESS: "SET_PROGRESS",
-    SET_FEED: "SET_FEED"
+    SET_FEED: "SET_FEED",
+    SET_PERSON: "SET_PERSON"
 }
