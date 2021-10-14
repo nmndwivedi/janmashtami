@@ -47,7 +47,7 @@ const init = {
 
 const progress = (state = init, { type, payload }) => {
     switch (type) {
-        case Types.SET_PROGRESS:
+        case Types.FETCH_PROGRESS:
             return {...state, items: payload};
         default:
             return state;

@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ContributeCard, Nav, Feed } from "../Components";
-import { setProgress } from "../Redux/Actions/progress";
-import { initializeCart, updateCart } from "../Redux/Actions/cart";
+import { updateCart } from "../Redux/Actions/cart"
+import useDataLoader from "../Hooks/useDataLoader";
 
 export default function Contribute() {
   //Offline
@@ -11,8 +10,10 @@ export default function Contribute() {
   //Online
   const progress = useSelector((state) => state.progress.items);
   const contributors = useSelector((state) => state.feed.donors);
-  //Dispatch
+
   const d = useDispatch();
+
+  useDataLoader({progress: true, cart: true, feed: true});
 
   //   // TODO Add link from firebase
   //   useEffect(() => {
@@ -24,10 +25,6 @@ export default function Contribute() {
 
   //     fetchCatalog();
   //   }, [disp]);
-
-  useEffect(() => {
-    d(initializeCart());
-  }, []);
 
   const handleAddToCart = (id, amount) => {
     let newCart = cart.filter((s) => s.id !== id);

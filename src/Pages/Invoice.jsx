@@ -1,8 +1,7 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { initializeCart } from "../Redux/Actions/cart";
+import { useSelector } from "react-redux";
 import { Invite } from "../Components";
 import { NumFmt } from "../Utils";
+import useDataLoader from "../Hooks/useDataLoader";
 
 function print(e) {
   window.print();
@@ -11,11 +10,8 @@ function print(e) {
 export default function Invoice(props) {
   const cart = useSelector((state) => state.cart.items);
   const person = useSelector((state) => state.person.person);
-  const d = useDispatch();
 
-  useEffect(() => {
-    d(initializeCart());
-  }, []);
+  useDataLoader({cart: true});
 
   const sum = cart.map((p) => p.amount).reduce((p, c) => p + c, 0);
 

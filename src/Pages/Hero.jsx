@@ -31,10 +31,10 @@ export default function Hero() {
                   after defeating Ravana, having spent 14 years in exile.
                 </p>
                 <p className="mt-3 text-base text-gray-700 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5 md:text-lg xl:mx-0 text-left">
-                  <p>Join us for an evening of</p>
+                  <span>Join us for an evening of</span>
                   <dt>
                     <svg
-                      class="absolute h-6 w-6 text-green-500"
+                      className="absolute h-6 w-6 text-green-500"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -42,18 +42,18 @@ export default function Hero() {
                       aria-hidden="true"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <p class="ml-9">Fantastic Kirtans</p>
+                    <span className="ml-9">Fantastic Kirtans</span>
                   </dt>
 
                   <dt>
                     <svg
-                      class="absolute h-6 w-6 text-green-500"
+                      className="absolute h-6 w-6 text-green-500"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -61,18 +61,18 @@ export default function Hero() {
                       aria-hidden="true"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <p class="ml-9">Enlivening Kathas</p>
+                    <span className="ml-9">Enlivening Kathas</span>
                   </dt>
 
                   <dt>
                     <svg
-                      class="absolute h-6 w-6 text-green-500"
+                      className="absolute h-6 w-6 text-green-500"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -80,18 +80,18 @@ export default function Hero() {
                       aria-hidden="true"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <p class="ml-9">Special Aarti Offerings</p>
+                    <span className="ml-9">Special Aarti Offerings</span>
                   </dt>
 
                   <dt>
                     <svg
-                      class="absolute h-6 w-6 text-green-500"
+                      className="absolute h-6 w-6 text-green-500"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -99,18 +99,18 @@ export default function Hero() {
                       aria-hidden="true"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <p class="ml-9">Cultural & Kids Programs</p>
+                    <span className="ml-9">Cultural & Kids Programs</span>
                   </dt>
 
                   <dt>
                     <svg
-                      class="absolute h-6 w-6 text-green-500"
+                      className="absolute h-6 w-6 text-green-500"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -118,13 +118,13 @@ export default function Hero() {
                       aria-hidden="true"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <p class="ml-9">Prasadam (take away Dinner)</p>
+                    <span className="ml-9">Prasadam (take away Dinner)</span>
                   </dt>
                 </p>
                 <div className="mt-5 sm:mt-8 xl:mt-12 sm:flex sm:justify-center xl:justify-center">

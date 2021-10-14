@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Disclosure, Switch } from "@headlessui/react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { initializeCart } from "../../Redux/Actions/cart";
 import { NumFmt } from "../../Utils";
 import validateAuth from "./validateAuth";
 import useFormValidation from "../../Hooks/useFormValidation";
+import useDataLoader from "../../Hooks/useDataLoader";
 // import { ideal } from '../../public/Diwali/ideal.svg';
 
 function classNames(...classes) {
@@ -32,15 +32,12 @@ export default function Billing() {
     errors,
     isSubmitting,
   } = useFormValidation(INITIAL_STATE, validateAuth);
-  const d = useDispatch();
 
   useEffect(() => {
     handleSwitch(enabled);
   }, [enabled]);
 
-  useEffect(() => {
-    d(initializeCart());
-  }, []);
+  useDataLoader({cart: true});
 
   let total = cart.reduce((p, v) => p + v.amount, 0);
 

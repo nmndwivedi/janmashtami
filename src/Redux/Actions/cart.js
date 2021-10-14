@@ -2,6 +2,7 @@ import { Types } from "../types";
 
 export const initializeCart = () => async (dispatch) => {
   const lsData = JSON.parse(localStorage.getItem("cart"));
+
   dispatch({
     type: Types.INITIALIZE_CART,
     payload: lsData ? lsData : [],

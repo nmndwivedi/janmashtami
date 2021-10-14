@@ -12,7 +12,7 @@ const init = {
 
 const person = (state = init, { type, payload }) => {
     switch (type) {
-        case Types.SET_PERSON:
+        case Types.INITIALIZE_PERSON:
             return { ...state, items: payload };
         default:
             return state;
