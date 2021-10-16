@@ -11,7 +11,7 @@ import {
   } from "react-share";
 import { NumFmt } from '../Utils'
 
-const shareUrl = 'https://diwali2021.nl';
+const shareUrl = 'https://www.diwali2021.netlify.app/';
 const title = 'Diwali Celebration in Amsterdam! #Diwali2021 #ISKCON';
 
 export default function Invite({ name, number, amount }) {

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Disclosure, Switch } from "@headlessui/react";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { NumFmt } from "../../Utils";
 import validateAuth from "./validateAuth";
 import useStripeCheckout from "./useStripeCheckout";
@@ -48,6 +50,7 @@ export default function Billing() {
 
   return (
     <div className="bg-white">
+      <ToastContainer />
       <main className="lg:min-h-screen lg:overflow-hidden lg:flex lg:flex-row-reverse">
         <h1 className="sr-only">Checkout</h1>
 
