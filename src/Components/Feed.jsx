@@ -2,7 +2,7 @@ import { NumFmt } from '../Utils';
 
 const FeedItem = (contributor, i) => {
   return (
-    <li key={i} className="py-4">{contributor.id}
+    <li key={i} className="py-4">
       <div className="flex space-x-3">
         {/* <img className="h-6 w-6 rounded-full" src={contributor.imageUrl} alt="" /> */}
         <svg

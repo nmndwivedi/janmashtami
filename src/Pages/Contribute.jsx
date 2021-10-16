@@ -98,7 +98,7 @@ export default function Contribute() {
             ))}
           </div>
 
-          <div className="hidden sticky top-8 xl:block mt-4 mr-16 -ml-12 w-72 h-96">
+          <div className="hidden sticky top-8 xl:block mt-4 mr-10 -ml-0 w-72 h-96">
             <p className="mb-4">Recent Activity</p>
 
             <div className="h-96 overflow-y-scroll border border-gray-300 px-4 rounded-2xl">
