@@ -16,37 +16,37 @@ const title = 'Diwali Celebration in Amsterdam! #Diwali2021 #ISKCON';
 
 export default function Invite({ name, number, amount }) {
     return (
-        <div class="max-w-lg rounded-2xl overflow-hidden shadow-lg">
-            <img class="w-full" src="./Diwali/sitaram.jpeg" alt="Mountain" />
+        <div className="max-w-lg rounded-2xl overflow-hidden shadow-lg">
+            <img className="w-full" src="./Diwali/sitaram.jpeg" alt="Mountain" />
 
-            <div class="px-6 py-4">
-                <div class="font-bold text-2xl mb-4">
+            <div className="px-6 py-4">
+                <div className="font-bold text-2xl mb-4">
                     Deepawali 2021
-                    <div class="mt-1 text-gray-400 font-normal">
+                    <div className="mt-1 text-gray-400 font-normal">
                         ISKCON Amsterdam Mahotsav
                     </div>
                 </div>
                 
-                <p className="text-gray-700 text-lg mb-4">
+                <div className="text-gray-700 text-lg mb-4">
                     <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">29 October, 2021 | 6:00-10:00 PM</span></p>
                     <p className="text-lg font-semibold text-red-600">Venue: <span className="text-gray-700 font-normal text-sm">Oasis Party & Events, Industrieweg 20, 1422AJ Uithoorn, NL</span></p>
-                </p>
+                </div>
 
-                <p class="text-gray-700 text-xl text-right mb-4">
+                <div className="text-gray-700 text-xl text-right mb-4">
                     <p>{name}{number>0 && <span>(+{number})</span>}</p>
                     <p className="text-gray-500 font-light">Contribution Amount: <span className="">{NumFmt(amount)}</span></p>
-                </p>
+                </div>
 
-                <p class="text-gray-400 text-sm text-center mb-2">
+                <div className="text-gray-400 text-sm text-center mb-2">
                     <p>Hare Krishna Hare Krishna Krishna Krishna Hare Hare</p>
                     <p>Hare Rama Hare Rama Rama Rama Hare Hare</p>
-                </p>
+                </div>
             </div>
 
-            <div class="px-6 pt-1 pb-2">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Diwali2021</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Amsterdam</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ISKCON</span>
+            <div className="px-6 pt-1 pb-2">
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Diwali2021</span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Amsterdam</span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ISKCON</span>
             </div>
 
             <div className="w-full flex justify-end mb-4 px-4 items-center">

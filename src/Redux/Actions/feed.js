@@ -1,5 +1,5 @@
 import { Types } from '../types'
-import { db, collection, getDocs } from "../../firebase-config";
+import { db, collection, getDocs, doc } from "../../firebase-config";
 
 export const fetchFeed = (donors) => async (dispatch) => {
     const feedRef = collection(db, "feed");
@@ -13,5 +13,12 @@ export const fetchFeed = (donors) => async (dispatch) => {
     dispatch ({
         type: Types.FETCH_FEED,
         payload: feedData
+    });
+}
+
+export const setFeed = (newFeed) => async (dispatch) => {
+    return dispatch({
+        type: Types.SET_FEED,
+        payload: newFeed
     });
 }

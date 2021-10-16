@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
-import { collection, getDocs, addDoc, updateDoc, doc } from "firebase/firestore";
+import { getFunctions, httpsCallable } from 'firebase/functions';
+import { collection, getDocs, doc } from "firebase/firestore";
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,5 +24,12 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
 const db = getFirestore(app);
+const fns = getFunctions(app);
 
-export { db, collection, getDocs, addDoc, updateDoc, doc };
+const baseUrl = 'https://europe-west1-diwali-2021-c6dd3.cloudfunctions.net/';
+// const baseUrl = 'https://europe-west1-diwali-2021-c6dd3.cloudfunctions.net/';
+const createStripeCheckout = baseUrl + 'createStripeCheckout';
+const getStripePubKey = baseUrl + 'getStripePubKey';
+const updateData = baseUrl + 'updateData';
+
+export { db, collection, getDocs, doc, fns, httpsCallable, createStripeCheckout, getStripePubKey, updateData };

@@ -1,7 +1,21 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { Nav } from "../Components";
-import { Link } from 'react-router-dom';
+import { clearCart } from "../Redux/Actions/cart";
+import { purchased } from "../Redux/Actions/purchased";
 
 export default function Hero() {
+  const p = useSelector((state) => state.purchased.purchased)
+  const d = useDispatch();
+
+  useEffect(() => {
+    if(localStorage.getItem("purchased")==='true') {
+      d(clearCart());
+      d(purchased(false));
+    }
+  }, []);
+
   return (
     <>
       <div className="relative overflow-hidden bg-white">
@@ -130,11 +144,9 @@ export default function Hero() {
                 <div className="mt-5 sm:mt-8 xl:mt-12 sm:flex sm:justify-center xl:justify-center">
                   <div className="rounded-md shadow">
                     <Link to="/contribute">
-                        <button
-                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-12"
-                        >
+                      <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-12">
                         Join the Celebration
-                        </button>
+                      </button>
                     </Link>
                   </div>
                   {/* <div className="mt-3 sm:mt-0 sm:ml-3">

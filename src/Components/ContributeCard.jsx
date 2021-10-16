@@ -16,7 +16,7 @@ function colorClass(p) {
 const denominations = [10, 20, 50, 108, 256, 501, 1001];
 
 function ProgressBar({ prog, goal }) {
-  const perc = Math.min(Math.max((prog * 100) / goal, 7), 1000);
+  const perc = Math.round((Math.min(Math.max((prog * 100) / goal, 7), 1000)));
   let progress = (goal * perc) / 100;
 
   return (
@@ -57,10 +57,13 @@ function getInitialSelectionType(val, arr) {
 }
 
 export default function ContributeCard({
+  innerRef,
   product,
   last,
   progress,
   initialSelection,
+  myIndex,
+  handleScrollToNext,
   onAddToCart,
   onRemoveFromCart,
 }) {
@@ -96,7 +99,7 @@ export default function ContributeCard({
   };
 
   return (
-    <div className="bg-white max-w-4xl rounded-3xl">
+    <div ref={innerRef} className="bg-white max-w-4xl rounded-3xl">
       <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:max-w-7xl lg:p-8 overflow-hidden rounded-3xl">
         <div className="lg:grid lg:grid-cols-8 lg:auto-rows-min lg:gap-x-8">
           {/* Image gallery */}
@@ -214,6 +217,7 @@ export default function ContributeCard({
                 </Link>
 
                 <div
+                  onClick={()=>handleScrollToNext(myIndex+1)}
                   className={`${
                     last ? "hidden" : ""
                   } w-1/2 bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}

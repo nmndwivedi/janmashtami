@@ -1,6 +1,6 @@
 import React from "react";
 
-function useFormValidation(initialState, validate) {
+function useFormValidation(initialState, validate, next) {
   const [values, setValues] = React.useState(initialState);
   const [errors, setErrors] = React.useState({});
   const [isSubmitting, setSubmitting] = React.useState(false);
@@ -9,8 +9,8 @@ function useFormValidation(initialState, validate) {
     if (isSubmitting) {
       const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
-        console.log("authenticated!", values.email, values.password);
-        setSubmitting(false);
+        next(values);
+        // setSubmitting(false);
       } else {
         setSubmitting(false);
       }
@@ -22,10 +22,15 @@ function useFormValidation(initialState, validate) {
 //   }, [values]);
 
   function handleChange(event) {
-    setValues({
+    const newVals = {
       ...values,
       [event.target.name]: event.target.value
-    });
+    };
+
+    setValues(newVals);
+
+    const validationErrors = validate(newVals);
+    setErrors(validationErrors);
   }
 
   function handleSwitch(val) {

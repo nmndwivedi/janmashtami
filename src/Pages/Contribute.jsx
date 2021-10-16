@@ -1,6 +1,7 @@
+import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ContributeCard, Nav, Feed } from "../Components";
-import { updateCart } from "../Redux/Actions/cart"
+import { updateCart } from "../Redux/Actions/cart";
 import useDataLoader from "../Hooks/useDataLoader";
 
 export default function Contribute() {
@@ -11,9 +12,20 @@ export default function Contribute() {
   const progress = useSelector((state) => state.progress.items);
   const contributors = useSelector((state) => state.feed.donors);
 
+  const itemsRef = useRef([]);
+
   const d = useDispatch();
 
-  useDataLoader({progress: true, cart: true, feed: true});
+  useDataLoader({ progress: true, cart: true, feed: true });
+
+  const executeScroll = (toElementIndex) => {
+    itemsRef.current[toElementIndex].scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
+    // console.log('scrolling to ' + toElementIndex);
+  };
 
   //   // TODO Add link from firebase
   //   useEffect(() => {
@@ -54,13 +66,16 @@ export default function Contribute() {
         </header>
         <main className="flex">
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-48 flex flex-col items-center xl:items-start space-y-12">
-            {products.map((p) => (
+            {products.map((p, index) => (
               <ContributeCard
-                key={p.id}
+                key={index}
+                innerRef={(el) => (itemsRef.current[index] = el)}
                 product={p}
-                last={products.indexOf(p) === products.length - 1}
+                last={index === products.length - 1}
                 progress={progress.find((i) => i.id === p.id)}
                 initialSelection={cart.find((i) => i.id === p.id)?.amount}
+                myIndex={index}
+                handleScrollToNext={executeScroll}
                 onAddToCart={handleAddToCart}
                 onRemoveFromCart={handleRemoveFromCart}
               />

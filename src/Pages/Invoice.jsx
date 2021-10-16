@@ -1,7 +1,10 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { Invite } from "../Components";
-import { NumFmt } from "../Utils";
 import useDataLoader from "../Hooks/useDataLoader";
+import { purchased } from "../Redux/Actions/purchased";
+import { updateData } from '../firebase-config';
 
 function print(e) {
   window.print();
@@ -10,8 +13,26 @@ function print(e) {
 export default function Invoice(props) {
   const cart = useSelector((state) => state.cart.items);
   const person = useSelector((state) => state.person.person);
+  const d = useDispatch();
 
-  useDataLoader({cart: true});
+  useDataLoader({ cart: true });
+
+  useEffect(() => {
+    d(purchased(true));
+
+    const updatePurchaseData = async () => {
+      if(localStorage.getItem("ros")!==null) {
+        const requestOptions = JSON.parse(localStorage.getItem("ros"));
+        await fetch(
+          updateData,
+          requestOptions
+        );
+        localStorage.removeItem("ros");
+      }
+    };
+
+    updatePurchaseData();
+  }, []);
 
   const sum = cart.map((p) => p.amount).reduce((p, c) => p + c, 0);
 
@@ -29,14 +50,10 @@ export default function Invoice(props) {
         </div>
 
         <div className="mt-8 w-full flex flex-col items-center">
-          <Invite
-            name={person.name}
-            number={person.guests}
-            amount={sum}
-          />
+          <Invite name={person.name} number={person.guests} amount={sum} />
         </div>
 
-        <div className="my-24 p-8 pt-4 border border-gray-300">
+        {/* <div className="my-24 p-8 pt-4 border border-gray-300">
           <h2 className="sr-only">Your order</h2>
 
           <h3 className="sr-only">Items</h3>
@@ -65,7 +82,7 @@ export default function Invoice(props) {
             </div>
           ))}
 
-          <div className="sm:ml-40 sm:pl-6">
+          {/* <div className="sm:ml-40 sm:pl-6">
             <h3 className="sr-only">Your information</h3>
 
             <h4 className="sr-only">Addresses</h4>
@@ -117,15 +134,37 @@ export default function Invoice(props) {
                 <dd className="text-gray-700 text-lg">{NumFmt(sum)}</dd>
               </div>
             </dl>
-          </div>
-        </div>
+          </div> 
+        </div> */}
 
         <button
-          className="mb-40 w-full px-8 py-3 max-w-sm bg-indigo-500 rounded-full text-white font-semibold text-lg"
+          className="mt-20 mb-20 w-full px-8 py-3 max-w-sm bg-indigo-500 rounded-full text-white font-semibold text-lg flex items-center justify-center space-x-2"
           onClick={print}
         >
-          Print Me
+          <span>Save Me</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
+          </svg>
         </button>
+
+        <Link to="/">
+          <button className="mb-40 w-full px-8 py-3 max-w-sm bg-gray-400 rounded-full text-white font-semibold text-lg flex items-center justify-center space-x-2">
+            <span>Home</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+          </button>
+        </Link>
       </div>
     </div>
   );

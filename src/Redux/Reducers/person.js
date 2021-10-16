@@ -14,6 +14,8 @@ const person = (state = init, { type, payload }) => {
     switch (type) {
         case Types.INITIALIZE_PERSON:
             return { ...state, items: payload };
+        case Types.SET_PERSON:
+            return { ...state, items: payload };
         default:
             return state;
     }

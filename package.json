@@ -6,6 +6,8 @@
     "@craco/craco": "^6.3.0",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.19.1",
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",

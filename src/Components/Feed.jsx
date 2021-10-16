@@ -1,6 +1,8 @@
-const FeedItem = (contributor) => {
+import { NumFmt } from '../Utils';
+
+const FeedItem = (contributor, i) => {
   return (
-    <li key={contributor.id} className="py-4">
+    <li key={i} className="py-4">{contributor.id}
       <div className="flex space-x-3">
         {/* <img className="h-6 w-6 rounded-full" src={contributor.imageUrl} alt="" /> */}
         <svg
@@ -25,7 +27,7 @@ const FeedItem = (contributor) => {
               {contributor.contributions.map((c) => (
                 <p key={contributor.contributions.indexOf(c)} className="mt-1">
                   {" "}
-                  <span className="text-indigo-500">{c.amount}</span> to {c.item}{" "}
+                  <span className="text-indigo-500">{NumFmt(c.amount)}</span> to {c.item}{" "}
                   preparation!
                 </p>
               ))}
@@ -41,7 +43,7 @@ export default function Feed({ contributors }) {
   return (
     <div>
       <ul className="divide-y divide-gray-200">
-        {contributors.map((contributor) => FeedItem(contributor))}
+        {contributors.slice(0).reverse().map((contributor) => FeedItem(contributor, contributors.indexOf(contributor)))}
       </ul>
     </div>
   );
