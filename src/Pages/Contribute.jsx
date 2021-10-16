@@ -1,5 +1,8 @@
 import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ContributeCard, Nav, Feed } from "../Components";
 import { updateCart } from "../Redux/Actions/cart";
 import useDataLoader from "../Hooks/useDataLoader";
@@ -15,6 +18,9 @@ export default function Contribute() {
   const itemsRef = useRef([]);
 
   const d = useDispatch();
+  const history = useHistory();
+
+  const notify = (msg) => toast(msg);
 
   useDataLoader({ progress: true, cart: true, feed: true });
 
@@ -24,8 +30,14 @@ export default function Contribute() {
       block: "center",
       inline: "center",
     });
-    // console.log('scrolling to ' + toElementIndex);
   };
+
+  function routeToBilling(e) {
+    e.preventDefault();
+
+    if (cart && cart.length > 0) history.push("/checkout");
+    else notify("Please donate to at least one item");
+  }
 
   //   // TODO Add link from firebase
   //   useEffect(() => {
@@ -64,6 +76,9 @@ export default function Contribute() {
             </h1>
           </div>
         </header>
+
+        <ToastContainer />
+
         <main className="flex">
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-48 flex flex-col items-center xl:items-start space-y-12">
             {products.map((p, index) => (
@@ -78,6 +93,7 @@ export default function Contribute() {
                 handleScrollToNext={executeScroll}
                 onAddToCart={handleAddToCart}
                 onRemoveFromCart={handleRemoveFromCart}
+                onCheckout={routeToBilling}
               />
             ))}
           </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { RadioGroup } from "@headlessui/react";
-import { Link } from "react-router-dom";
 import { NumFmt } from "../Utils";
 
 function classNames(...classes) {
@@ -72,6 +71,7 @@ export default function ContributeCard({
   handleScrollToNext,
   onAddToCart,
   onRemoveFromCart,
+  onCheckout,
 }) {
   const [radioAmount, setRadioAmount] = useState("");
   const [customAmt, setCustomAmount] = useState("");
@@ -209,8 +209,8 @@ export default function ContributeCard({
               </div>
 
               <div className="mt-7 flex justify-around space-x-2">
-                <Link
-                  to="/checkout"
+                <button
+                  onClick={onCheckout}
                   className={`w-${last ? "full" : "1/3"} ${
                     last ? "bg-pink-600" : "bg-white"
                   } border border-pink-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium ${
@@ -220,7 +220,7 @@ export default function ContributeCard({
                   } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}
                 >
                   Checkout
-                </Link>
+                </button>
 
                 <div
                   onClick={() => handleScrollToNext(myIndex + 1)}
