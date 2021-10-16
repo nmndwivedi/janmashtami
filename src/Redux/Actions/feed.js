@@ -17,7 +17,7 @@ export const fetchFeed = (donors) => async (dispatch) => {
 }
 
 export const setFeed = (newFeed) => async (dispatch) => {
-    return dispatch({
+    dispatch({
         type: Types.SET_FEED,
         payload: newFeed
     });

@@ -9,9 +9,8 @@ function useFormValidation(initialState, validate, next) {
     if (isSubmitting) {
       const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
-        const err = next(values);
-        console.log(err);
-        if(err) setSubmitting(false);
+        next(values);
+        // setSubmitting(false);
       } else {
         setSubmitting(false);
       }

@@ -10,12 +10,12 @@ function print(e) {
   window.print();
 }
 
-export default function Invoice(props) {
+export default function Invoice() {
   const cart = useSelector((state) => state.cart.items);
   const person = useSelector((state) => state.person.person);
   const d = useDispatch();
 
-  useDataLoader({ cart: true });
+  useDataLoader({ cart: true, person: true });
 
   useEffect(() => {
     d(purchased(true));

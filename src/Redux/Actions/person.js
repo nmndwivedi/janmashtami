@@ -18,7 +18,7 @@ export const setPerson = (person) => async (dispatch) => {
 
     localStorage.setItem("person", JSON.stringify(person));
 
-    return dispatch({
+    dispatch({
         type: Types.SET_PERSON,
         payload: person
     });

@@ -33,7 +33,7 @@ export default function useStripeCheckout() {
     load();
   }, []);
 
-  function stripeCheckout(personData) {
+  const stripeCheckout = (personData) => {
     async function execute() {
       //Load req body
       /*
