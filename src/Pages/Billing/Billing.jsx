@@ -343,8 +343,8 @@ export default function Billing() {
               // type="submit"
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className={`w-full flex items-center justify-center bg-${
-                isSubmitting ? "gray-400" : "black"
+              className={`w-full flex items-center justify-center ${
+                isSubmitting ? "bg-gray-400" : "bg-black"
               } border border-transparent text-white rounded-md py-2 ${
                 isSubmitting
                   ? "cursor-wait"

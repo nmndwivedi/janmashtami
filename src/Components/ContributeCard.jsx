@@ -7,16 +7,22 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function colorClass(p) {
-  if (p <= 30) return "red-500";
-  else if (p <= 70) return "yellow-400";
-  else return "green-500";
+function bgColorClass(p) {
+  if (p <= 30) return "bg-red-500";
+  else if (p <= 70) return "bg-yellow-400";
+  else return "bg-green-500";
+}
+
+function textColorClass(p) {
+  if (p <= 30) return "text-red-500";
+  else if (p <= 70) return "text-yellow-400";
+  else return "text-green-500";
 }
 
 const denominations = [10, 20, 50, 108, 256, 501, 1001];
 
 function ProgressBar({ prog, goal }) {
-  const perc = Math.round((Math.min(Math.max((prog * 100) / goal, 7), 1000)));
+  const perc = Math.round(Math.min(Math.max((prog * 100) / goal, 7), 1000));
   let progress = (goal * perc) / 100;
 
   return (
@@ -29,7 +35,7 @@ function ProgressBar({ prog, goal }) {
         </div>
         <div className="text-right">
           <span
-            className={`text-xs font-semibold inline-block text-${colorClass(
+            className={`text-xs font-semibold inline-block ${textColorClass(
               perc
             )}`}
           >
@@ -40,7 +46,7 @@ function ProgressBar({ prog, goal }) {
       <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
         <div
           style={{ width: perc + "%" }}
-          className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-${colorClass(
+          className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center ${bgColorClass(
             perc
           )}`}
         ></div>
@@ -185,8 +191,8 @@ export default function ContributeCard({
                         min="1"
                         name="amount"
                         id="amount"
-                        className={`h-12 w-40 shadow-sm bg-${
-                          customAmt === "" ? "white" : "indigo-500"
+                        className={`h-12 w-40 shadow-sm ${
+                          customAmt === "" ? "bg-white" : "bg-indigo-500"
                         } text-white block sm:text-sm border-gray-200 rounded-md`}
                         placeholder="other amount(€)"
                         value={customAmt}
@@ -205,19 +211,19 @@ export default function ContributeCard({
               <div className="mt-7 flex justify-around space-x-2">
                 <Link
                   to="/checkout"
-                  className={`w-${last ? "full" : "1/3"} bg-${
-                    last ? "pink-600" : "white"
-                  } border border-pink-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-${
-                    !last ? "pink-600" : "white"
-                  } hover:bg-${
-                    last ? "pink-700" : "pink-100"
+                  className={`w-${last ? "full" : "1/3"} ${
+                    last ? "bg-pink-600" : "bg-white"
+                  } border border-pink-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium ${
+                    !last ? "text-pink-600" : "text-white"
+                  } hover:${
+                    last ? "bg-pink-700" : "bg-pink-100"
                   } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}
                 >
                   Checkout
                 </Link>
 
                 <div
-                  onClick={()=>handleScrollToNext(myIndex+1)}
+                  onClick={() => handleScrollToNext(myIndex + 1)}
                   className={`${
                     last ? "hidden" : ""
                   } w-1/2 bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 cursor-pointer`}
