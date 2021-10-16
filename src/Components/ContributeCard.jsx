@@ -168,11 +168,11 @@ export default function ContributeCard({
                           classNames(
                             "cursor-pointer focus:outline-none",
                             active
-                              ? "ring-1 ring-offset-1 ring-indigo-600"
+                              ? "ring-1 ring-offset-1 ring-indigo-500"
                               : "",
                             checked
-                              ? "bg-indigo-600 border-transparent text-white hover:bg-indigo-700"
-                              : "bg-white border-gray-200 text-gray-900 hover:bg-gray-50",
+                              ? "bg-indigo-500 border-transparent text-white hover:bg-indigo-500"
+                              : "bg-white border-gray-200 text-gray-900 hover:bg-indigo-100",
                             "border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1"
                           )
                         }

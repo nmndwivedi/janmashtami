@@ -348,7 +348,7 @@ export default function Billing() {
               } border border-transparent text-white rounded-md py-2 ${
                 isSubmitting
                   ? "cursor-wait"
-                  : "hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  : "hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
               }`}
             >
               <span className="sr-only">Pay now</span>
