@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-const url = "https://www.diwali2021.netlify.app"
+const url = "https://diwali2021.netlify.app"
 
 const MetaDecorator = ({ title, description, imgUrl, imgAlt }) => {
     return (

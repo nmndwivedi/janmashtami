@@ -1,6 +1,6 @@
 {
   "name": "diwali",
-  "homepage": "https://www.diwali2021.netlify.app/",
+  "homepage": "https://diwali2021.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
