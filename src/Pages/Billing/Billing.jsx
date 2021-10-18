@@ -10,6 +10,7 @@ import useStripeCheckout from "./useStripeCheckout";
 import useFormValidation from "../../Hooks/useFormValidation";
 import useDataLoader from "../../Hooks/useDataLoader";
 import Loader from '../../Components/Loader';
+import PhoneInput from '../../Components/PhoneInput';
 
 // import { ideal } from '../../public/Diwali/ideal.svg';
 
@@ -219,6 +220,7 @@ export default function Billing() {
                       id="name"
                       name="name"
                       autoComplete="name"
+                      placeholder="Name"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.name}
@@ -271,6 +273,7 @@ export default function Billing() {
                       id="tel"
                       name="tel"
                       autoComplete="tel"
+                      placeholder="+1 (555) 987-6543"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.tel}
