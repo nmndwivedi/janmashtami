@@ -3,13 +3,13 @@ import { Types } from '../types'
 const init = {
     items: [
         {
-            id: 0,
-            name: '🪞 Deity Shringaar',
+            id: 2,
+            name: '🥧 Prasadam',
             image: {
-                imageSrc: './Diwali/Deities 3.jpeg',
-                imageAlt: "Ornaments and clothing for the Deities",
+                imageSrc: './Diwali/Prasadam.jpeg',
+                imageAlt: "Delicious vegetarian food prepared and offered to the Lord",
             },
-            description: `<p>Ornaments and clothing for the Deities</p>`
+            description: `<p>Delicious vegetarian food prepared and offered to the Lord</p>`
         },
         {
             id: 1,
@@ -21,13 +21,13 @@ const init = {
             description: `<p>Diyas (ghee lamps) to honour the Deities</p>`
         },
         {
-            id: 2,
-            name: '🥧 Prasadam',
+            id: 0,
+            name: '🪞 Deity Shringaar',
             image: {
-                imageSrc: './Diwali/Prasadam.jpeg',
-                imageAlt: "Delicious vegetarian food prepared and offered to the Lord",
+                imageSrc: './Diwali/Deities 3.jpeg',
+                imageAlt: "Ornaments and clothing for the Deities",
             },
-            description: `<p>Delicious vegetarian food prepared and offered to the Lord</p>`
+            description: `<p>Ornaments and clothing for the Deities</p>`
         },
         {
             id: 3,
