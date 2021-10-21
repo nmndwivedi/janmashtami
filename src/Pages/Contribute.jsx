@@ -161,8 +161,8 @@ export default function Contribute() {
 
         <ToastContainer />
 
-        <main className="flex">
-          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-48 flex flex-col items-center xl:items-start space-y-12">
+        <main className="flex flex-col items-center xl:items-start xl:flex-row">
+          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-0 xl:mb-48 flex flex-col items-center xl:items-start space-y-12">
             {products.map((p, index) => (
               <ContributeCard
                 key={index}
@@ -180,7 +180,7 @@ export default function Contribute() {
             ))}
           </div>
 
-          <div className="hidden sticky top-8 xl:block mt-4 mr-10 -ml-0 w-72 h-96">
+          <div className="mb-40 xl:sticky xl:top-8 xl:block mt-4 xl:mr-10 -ml-0 w-full p-10 xl:p-0 max-w-md xl:w-72 h-96">
             <p className="mb-4">Recent Activity</p>
 
             <div className="h-96 overflow-y-scroll border border-gray-300 px-4 rounded-2xl">
