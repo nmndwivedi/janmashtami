@@ -375,7 +375,9 @@ export default function Billing() {
               <Loader visible={isSubmitting} />
             </button>
             {/* </form> */}
+            <p className="mt-8 text-center font-light text-gray-500 border border-gray-300 p-2">Iskcon Amsterdam is a recognized charity organization in the Netherlands. Every donation you make is eligible for tax benefits (tax-deductible).</p>
           </div>
+
         </section>
       </main>
     </div>
