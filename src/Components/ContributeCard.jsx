@@ -21,8 +21,8 @@ function textColorClass(p) {
 const denominations = [10, 20, 50, 108, 256, 501, 1001];
 
 function ProgressBar({ prog, goal }) {
-  const perc = Math.round(Math.min(Math.max((prog * 100) / goal, 7), 1000));
-  let progress = (goal * perc) / 100;
+  const perc = Math.round((prog * 100) / goal);
+  let progress = Math.round(prog);
 
   return (
     <div className="relative pt-5 px-4">
