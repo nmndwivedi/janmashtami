@@ -6,6 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { ContributeCard, Nav, Feed } from "../Components";
 import { updateCart } from "../Redux/Actions/cart";
 import useDataLoader from "../Hooks/useDataLoader";
+import useStripeCheckout from "../Pages/Billing/useStripeCheckout";
+import { clearCart } from "../Redux/Actions/cart";
+import { purchased } from "../Redux/Actions/purchased";
 
 function scrollCustomImplementation(element) {
   let start = null;
@@ -87,12 +90,21 @@ export default function Contribute() {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  const { stripeCheckout } = useStripeCheckout();
+  const [checkedOut, setCheckedOut] = useState(false);
+
   function handleWindowSizeChange() {
     setIsMobile(window.innerWidth <= 768);
   }
 
   useEffect(() => {
+    if(localStorage.getItem("purchased")==='true') {
+      d(clearCart());
+      d(purchased(false));
+    }
+
     window.addEventListener("resize", handleWindowSizeChange);
+
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
     };
@@ -115,9 +127,9 @@ export default function Contribute() {
   };
 
   function routeToBilling(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
-    if (cart && cart.length > 0) history.push("/checkout");
+    if (cart && cart.length > 0) stripeCheckout(); //history.push("/checkout");
     else notify("Please donate to at least one item");
   }
 
@@ -176,6 +188,9 @@ export default function Contribute() {
                 onAddToCart={handleAddToCart}
                 onRemoveFromCart={handleRemoveFromCart}
                 onCheckout={routeToBilling}
+                validCheckout={cart && cart.length > 0}
+                checkedOut={checkedOut}
+                setCheckedOut={setCheckedOut}
               />
             ))}
           </div>

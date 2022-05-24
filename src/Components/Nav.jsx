@@ -4,8 +4,6 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", external: false, href: "/" },
-  { name: "Contribute", external: false, href: "/contribute" },
   { name: "About", external: true, href: "https://iskconamsterdam.nl/" },
   {
     name: "Newsletter",
@@ -39,7 +37,7 @@ export default function Nav() {
           <div className="hidden md:block md:ml-12 md:pr-4 md:space-x-8">
             {navigation.map((item) => (
               <Link
-                key={item.name} 
+                key={item.name}
                 to={!item.external ? item.href : { pathname: item.href }}
                 target={!item.external ? "_self" : "_blank"}
               >

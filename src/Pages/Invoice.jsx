@@ -31,7 +31,7 @@ export default function Invoice() {
       }
     };
 
-    updatePurchaseData();
+    // updatePurchaseData();
   }, []);
 
   const sum = cart.map((p) => p.amount).reduce((p, c) => p + c, 0);
@@ -134,7 +134,7 @@ export default function Invoice() {
                 <dd className="text-gray-700 text-lg">{NumFmt(sum)}</dd>
               </div>
             </dl>
-          </div> 
+          </div>
         </div> */}
 
         <button

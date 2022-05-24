@@ -12,6 +12,6 @@ export default function useDataLoader({ progress, cart, feed, person }) {
     if(progress) d(fetchProgress());
     if(feed) d(fetchFeed());
     if(cart) d(initializeCart());
-    if(person) d(initializePerson());
+    // if(person) d(initializePerson());
   }, []);
 }

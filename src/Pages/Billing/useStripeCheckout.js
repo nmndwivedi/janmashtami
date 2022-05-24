@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSelector, useDispatch } from "react-redux";
 import { setPerson } from "../../Redux/Actions/person";
-import { createStripeCheckout, getStripePubKey } from '../../firebase-config';
+import {
+  createStripeCheckout,
+  getStripePubKey,
+  updateData,
+} from "../../firebase-config";
 
 export default function useStripeCheckout() {
   const [stripe, setStripe] = useState();
@@ -20,10 +24,7 @@ export default function useStripeCheckout() {
         method: "GET",
       };
 
-      const res = await fetch(
-        getStripePubKey,
-        requestOptions
-      );
+      const res = await fetch(getStripePubKey, requestOptions);
 
       const t = await res.json();
 
@@ -52,7 +53,7 @@ export default function useStripeCheckout() {
         }
       */
 
-      d(setPerson(personData));
+      // d(setPerson(personData));
 
       const filteredCart = cart.map((i) => ({
         id: i.details.id,
@@ -61,10 +62,10 @@ export default function useStripeCheckout() {
       }));
 
       const reqBody = {
-        name: personData.name,
-        tel: personData.tel,
-        guests: personData.guests,
-        anon: personData.anon,
+        // name: personData.name,
+        // tel: personData.tel,
+        // guests: personData.guests,
+        // anon: personData.anon,
         items: filteredCart,
         total: cart.reduce((p, v) => p + v.amount, 0),
       };
@@ -75,18 +76,24 @@ export default function useStripeCheckout() {
         body: JSON.stringify(reqBody),
       };
 
-      localStorage.setItem("ros", JSON.stringify(requestOptions));
+      // localStorage.setItem("ros", JSON.stringify(requestOptions));
 
-      const res = await fetch(
-        createStripeCheckout,
-        requestOptions
-      );
+      // await fetch(
+      //   updateData,
+      //   requestOptions
+      // );
 
-      const t = await res.json();
-      stripe.redirectToCheckout({ sessionId: t.data });
+      try {
+        const res = await fetch(createStripeCheckout, requestOptions);
+
+        const t = await res.json();
+        stripe.redirectToCheckout({ sessionId: t.data });
+      } catch (e) {
+        console.log(e);
+      }
     }
     execute();
-  }
+  };
 
   return { stripeCheckout };
 }

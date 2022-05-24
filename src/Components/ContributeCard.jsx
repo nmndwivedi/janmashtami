@@ -72,6 +72,9 @@ export default function ContributeCard({
   onAddToCart,
   onRemoveFromCart,
   onCheckout,
+  validCheckout,
+  checkedOut,
+  setCheckedOut
 }) {
   const [radioAmount, setRadioAmount] = useState("");
   const [customAmt, setCustomAmount] = useState("");
@@ -103,6 +106,13 @@ export default function ContributeCard({
       } else onAddToCart(product.id, parseInt(value));
     }
   };
+
+  const checkout = () => {
+    if(validCheckout) {
+      setCheckedOut(true);
+      onCheckout();
+    }
+  }
 
   return (
     <div ref={innerRef} className="bg-white max-w-4xl rounded-3xl">
@@ -210,7 +220,8 @@ export default function ContributeCard({
 
               <div className="mt-7 flex justify-around space-x-2">
                 <button
-                  onClick={onCheckout}
+                  onClick={checkout}
+                  disabled={checkedOut}
                   className={`w-${last ? "full" : "1/3"} ${
                     last ? "bg-pink-600" : "bg-white"
                   } border border-pink-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium ${

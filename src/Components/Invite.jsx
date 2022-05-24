@@ -11,24 +11,24 @@ import {
   } from "react-share";
 import { NumFmt } from '../Utils'
 
-const shareUrl = 'https://diwali2021.netlify.app/';
-const title = 'Diwali Celebration in Amsterdam! #Diwali2021 #ISKCON';
+const shareUrl = 'https://janmashtami2022.netlify.app/';
+const title = 'Janmashtami Celebration in Amsterdam! #Janmashtami2022 #ISKCON';
 
 export default function Invite({ name, number, amount }) {
     return (
         <div className="max-w-lg rounded-2xl overflow-hidden shadow-lg">
-            <img className="w-full" src="./Diwali/sitaram.jpeg" alt="Mountain" />
+            <img className="w-full" src="./Diwali/jm.jpeg" alt="Mountain" />
 
             <div className="px-6 py-4">
                 <div className="font-bold text-2xl mb-4">
-                    Deepawali 2021
+                    Janmashtami 2022
                     <div className="mt-1 text-gray-400 font-normal">
-                        ISKCON Amsterdam Mahotsav
+                        ISKCON Amsterdam
                     </div>
                 </div>
-                
+
                 <div className="text-gray-700 text-lg mb-4">
-                    <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">29 October, 2021 | 6:00-10:00 PM</span></p>
+                    <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">26 August, 2022 | 6:00-10:00 PM</span></p>
                     <p className="text-lg font-semibold text-red-600">Venue: <span className="text-gray-700 font-normal text-sm">Oasis Party & Events, Industrieweg 20, 1422AJ Uithoorn, NL</span></p>
                 </div>
 
@@ -44,7 +44,7 @@ export default function Invite({ name, number, amount }) {
             </div>
 
             <div className="px-6 pt-1 pb-2">
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Diwali2021</span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Janmashtami2022</span>
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Amsterdam</span>
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ISKCON</span>
             </div>
