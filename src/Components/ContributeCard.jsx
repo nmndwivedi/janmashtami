@@ -107,7 +107,9 @@ export default function ContributeCard({
     }
   };
 
-  const checkout = () => {
+  const checkout = (e) => {
+    e.preventDefault();
+
     if(validCheckout) {
       setCheckedOut(true);
       onCheckout();

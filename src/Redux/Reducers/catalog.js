@@ -22,21 +22,12 @@ const init = {
         },
         {
             id: 1,
-            name: '🪔 Diyas',
+            name: '🔊 Sound System',
             image: {
                 imageSrc: './Diwali/Diyas.jpeg',
-                imageAlt: "Diyas (ghee lamps) to honour the Deities",
+                imageAlt: "Sound System for a world class kirtan event",
             },
-            description: `<p>Diyas (ghee lamps) to honour the Deities</p>`
-        },
-        {
-            id: 0,
-            name: '🪞 Deity Shringaar',
-            image: {
-                imageSrc: './Diwali/Deities 3.jpeg',
-                imageAlt: "Ornaments and clothing for the Deities",
-            },
-            description: `<p>Ornaments and clothing for the Deities</p>`
+            description: `<p>Sound System for a world class kirtan event</p>`
         },
         {
             id: 4,
@@ -48,25 +39,7 @@ const init = {
             description: `<p>Flowers for the Deities and hall decorations</p>`
         },
         {
-            id: 5,
-            name: '⛰ Govardhan Puja',
-            image: {
-                imageSrc: './Diwali/Govardhan 2.jpeg',
-                imageAlt: "Govardhan hill preparation for puja offering",
-            },
-            description: `<p>Govardhan hill preparation for puja offering</p>`
-        },
-        {
-            id: 6,
-            name: '🙏🏻 Arati',
-            image: {
-                imageSrc: './Diwali/Arati.jpeg',
-                imageAlt: "Arati offering to the Deities",
-            },
-            description: `<p>Arati offering to the Deities</p>`
-        },
-        {
-            id: 7,
+            id: 0,
             name: '🧩 Miscellaneous',
             image: {
                 imageSrc: './Diwali/Misc.jpeg',
