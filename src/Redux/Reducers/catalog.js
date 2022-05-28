@@ -24,7 +24,7 @@ const init = {
             id: 1,
             name: '🔊 Sound System',
             image: {
-                imageSrc: './Diwali/Diyas.jpeg',
+                imageSrc: './Diwali/ss.jpeg',
                 imageAlt: "Sound System for a world class kirtan event",
             },
             description: `<p>Sound System for a world class kirtan event</p>`

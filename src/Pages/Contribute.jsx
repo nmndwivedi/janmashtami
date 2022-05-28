@@ -129,8 +129,13 @@ export default function Contribute() {
   function routeToBilling(e) {
     // e.preventDefault();
 
-    if (cart && cart.length > 0) stripeCheckout(); //history.push("/checkout");
-    else notify("Please donate to at least one item");
+    if (cart && cart.length > 0) {
+      notify("Redirecting to checkout...");
+      stripeCheckout();
+    } //history.push("/checkout");
+    else {
+      notify("Please donate to at least one item");
+    }
   }
 
   //   // TODO Add link from firebase
@@ -191,6 +196,7 @@ export default function Contribute() {
                 validCheckout={cart && cart.length > 0}
                 checkedOut={checkedOut}
                 setCheckedOut={setCheckedOut}
+                notify={notify}
               />
             ))}
           </div>

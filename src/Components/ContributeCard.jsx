@@ -74,7 +74,8 @@ export default function ContributeCard({
   onCheckout,
   validCheckout,
   checkedOut,
-  setCheckedOut
+  setCheckedOut,
+  notify
 }) {
   const [radioAmount, setRadioAmount] = useState("");
   const [customAmt, setCustomAmount] = useState("");
@@ -113,6 +114,8 @@ export default function ContributeCard({
     if(validCheckout) {
       setCheckedOut(true);
       onCheckout();
+    } else {
+      notify("Please donate to at least one item");
     }
   }
 
