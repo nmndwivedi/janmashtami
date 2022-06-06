@@ -34,7 +34,7 @@ export default function Invite({ name, number, amount }) {
 
                 <div className="text-gray-700 text-xl text-right mb-4">
                     <p>{name}{number>0 && <span>(+{number})</span>}</p>
-                    <p className="text-gray-500 font-light">Contribution Amount: <span className="">{NumFmt(amount)}</span></p>
+                    {/* <p className="text-gray-500 font-light">Contribution Amount: <span className="">{NumFmt(amount)}</span></p> */}
                 </div>
 
                 <div className="text-gray-400 text-sm text-center mb-2">
