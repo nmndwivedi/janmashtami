@@ -28,8 +28,8 @@ export default function Invite({ name, number, amount }) {
                 </div>
 
                 <div className="text-gray-700 text-lg mb-4">
-                    <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">26 August, 2022 | 6:00-10:00 PM</span></p>
-                    <p className="text-lg font-semibold text-red-600">Venue: <span className="text-gray-700 font-normal text-sm">Oasis Party & Events, Industrieweg 20, 1422AJ Uithoorn, NL</span></p>
+                    <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">19 August 2022 | 3pm–9pm</span></p>
+                    <p className="text-lg font-semibold text-red-600">Venue: <span className="text-gray-700 font-normal text-sm">ORANJEKERK | Tweede van der Helststraat 1-3, 1073 AE Amsterdam</span></p>
                 </div>
 
                 <div className="text-gray-700 text-xl text-right mb-4">
