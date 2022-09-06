@@ -33,7 +33,7 @@ const init = {
             id: 3,
             name: '🪞 Deities Shringaar',
             image: {
-                imageSrc: './Diwali/Deities 3.jpeg',
+                imageSrc: './Diwali/Deities.jpeg',
                 imageAlt: "Decorations and travel for Deities from Radhadesh",
             },
             description: `<p>Decorations and travel for Deities from Radhadesh</p>`
@@ -43,9 +43,9 @@ const init = {
             name: '🥧 Prasadam',
             image: {
                 imageSrc: './Diwali/Prasadam.jpeg',
-                imageAlt: "Delicious vegetarian food prepared and offered to the Lord",
+                imageAlt: "Serving delicious vegetarian food (Jagannath's Prasad) to close to 5000 people on Dam Square",
             },
-            description: `<p>Delicious vegetarian food prepared and offered to the Lord</p>`
+            description: `<p>Serving delicious vegetarian food (Jagannath's Prasad) to close to 5000 people on Dam Square</p>`
         },
         {
             id: 5,
