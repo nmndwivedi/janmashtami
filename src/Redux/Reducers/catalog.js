@@ -3,7 +3,25 @@ import { Types } from '../types'
 const init = {
     items: [
         {
-            id: 3,
+            id: 0,
+            name: '🎠 Ratha',
+            image: {
+                imageSrc: './Diwali/ratha.jpeg',
+                imageAlt: "A Grand Chariot for Jagannath, Baladev and Subhadra Maharani",
+            },
+            description: `<p>A Grand Chariot for Jagannath, Baladev and Subhadra Maharani</p>`
+        },
+        {
+            id: 1,
+            name: '🎙 Stage',
+            image: {
+                imageSrc: './Diwali/stage.jpeg',
+                imageAlt: "Stage for performances, seating for guests, tents and transportation costs",
+            },
+            description: `<p>Stage for performances, seating for guests, tents and transportation costs</p>`
+        },
+        {
+            id: 2,
             name: '🏟 Venue',
             image: {
                 imageSrc: './Diwali/Venue.jpeg',
@@ -12,7 +30,16 @@ const init = {
             description: `<p>Reservation of a spacious venue for the event</p>`
         },
         {
-            id: 2,
+            id: 3,
+            name: '🪞 Deities Shringaar',
+            image: {
+                imageSrc: './Diwali/Prasadam.jpeg',
+                imageAlt: "Decorations and travel for Deities from Radhadesh",
+            },
+            description: `<p>Decorations and travel for Deities from Radhadesh</p>`
+        },
+        {
+            id: 4,
             name: '🥧 Prasadam',
             image: {
                 imageSrc: './Diwali/Prasadam.jpeg',
@@ -21,7 +48,7 @@ const init = {
             description: `<p>Delicious vegetarian food prepared and offered to the Lord</p>`
         },
         {
-            id: 1,
+            id: 5,
             name: '🔊 Sound System',
             image: {
                 imageSrc: './Diwali/ss.jpeg',
@@ -30,7 +57,7 @@ const init = {
             description: `<p>Sound System for a world class kirtan event</p>`
         },
         {
-            id: 4,
+            id: 6,
             name: '💐 Flowers',
             image: {
                 imageSrc: './Diwali/Flowers.jpeg',
@@ -39,7 +66,7 @@ const init = {
             description: `<p>Flowers for the Deities and hall decorations</p>`
         },
         {
-            id: 0,
+            id: 7,
             name: '🧩 Miscellaneous',
             image: {
                 imageSrc: './Diwali/Misc.jpeg',
