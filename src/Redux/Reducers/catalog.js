@@ -3,6 +3,15 @@ import { Types } from '../types'
 const init = {
     items: [
         {
+            id: 3,
+            name: '🏟 Venue',
+            image: {
+                imageSrc: './Diwali/Venue.jpeg',
+                imageAlt: "Reservation of a spacious venue for the event",
+            },
+            description: `<p>Reservation of a spacious venue for the event</p>`
+        },
+        {
             id: 2,
             name: '🥧 Prasadam',
             image: {
@@ -37,15 +46,6 @@ const init = {
                 imageAlt: "Items that dont fit in other categories",
             },
             description: `<p>Items that dont fit in other categories</p>`
-        },
-        {
-            id: 3,
-            name: '🏟 Venue',
-            image: {
-                imageSrc: './Diwali/Venue.jpeg',
-                imageAlt: "Reservation of a spacious venue for the event",
-            },
-            description: `<p>Reservation of a spacious venue for the event</p>`
         }
     ]
 }
