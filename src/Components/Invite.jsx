@@ -12,7 +12,7 @@ import {
 import { NumFmt } from '../Utils'
 
 const shareUrl = 'https://janmashtami2022.netlify.app/';
-const title = 'Janmashtami Celebration in Amsterdam! #Janmashtami2022 #ISKCON';
+const title = 'Janmashtami Celebration in Amsterdam! #RathaYatraAmsterdam2022 #ISKCON';
 
 export default function Invite({ name, number, amount }) {
     return (
@@ -21,15 +21,15 @@ export default function Invite({ name, number, amount }) {
 
             <div className="px-6 py-4">
                 <div className="font-bold text-2xl mb-4">
-                    Janmashtami 2022
+                    Ratha Yatra Amsterdam 2022
                     <div className="mt-1 text-gray-400 font-normal">
                         ISKCON Amsterdam
                     </div>
                 </div>
 
                 <div className="text-gray-700 text-lg mb-4">
-                    <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">19 August 2022 | 3pm–9pm</span></p>
-                    <p className="text-lg font-semibold text-red-600">Venue: <span className="text-gray-700 font-normal text-sm">ORANJEKERK | Tweede van der Helststraat 1-3, 1073 AE Amsterdam</span></p>
+                    <p className="text-lg font-semibold text-red-600">Date: <span className="text-gray-700 font-normal text-sm">10 September 2022 | 12:00pm–8:00pm</span></p>
+                    <p className="text-lg font-semibold text-red-600">Venue: <span className="text-gray-700 font-normal text-sm">Lizzy Ansinghstraat 80-1, 1072RD Amsterdam</span></p>
                 </div>
 
                 <div className="text-gray-700 text-xl text-right mb-4">
@@ -44,7 +44,7 @@ export default function Invite({ name, number, amount }) {
             </div>
 
             <div className="px-6 pt-1 pb-2">
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Janmashtami2022</span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#RathaYatraAmsterdam2022</span>
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Amsterdam</span>
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ISKCON</span>
             </div>
