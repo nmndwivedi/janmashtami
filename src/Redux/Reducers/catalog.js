@@ -43,9 +43,9 @@ const init = {
             name: '🥧 Prasadam',
             image: {
                 imageSrc: './Diwali/Prasadam.jpeg',
-                imageAlt: "Serving delicious vegetarian food (Jagannath's Prasad) to close to 5000 people on Dam Square",
+                imageAlt: "Serving delicious vegetarian food (Jagannath's Prasad) to 5000 people at Dam Square",
             },
-            description: `<p>Serving delicious vegetarian food (Jagannath's Prasad) to close to 5000 people on Dam Square</p>`
+            description: `<p>Serving delicious vegetarian food (Jagannath's Prasad) to 5000 people at Dam Square</p>`
         },
         {
             id: 5,
