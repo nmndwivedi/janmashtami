@@ -33,7 +33,7 @@ const init = {
             id: 3,
             name: '🪞 Deities Shringaar',
             image: {
-                imageSrc: './Diwali/Prasadam.jpeg',
+                imageSrc: './Diwali/Deities 3.jpeg',
                 imageAlt: "Decorations and travel for Deities from Radhadesh",
             },
             description: `<p>Decorations and travel for Deities from Radhadesh</p>`
