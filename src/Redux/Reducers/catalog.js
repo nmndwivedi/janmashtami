@@ -4,24 +4,6 @@ const init = {
     items: [
         {
             id: 0,
-            name: '🎠 Ratha',
-            image: {
-                imageSrc: './Diwali/ratha.jpeg',
-                imageAlt: "A Grand Chariot for Jagannath, Baladev and Subhadra Maharani",
-            },
-            description: `<p>A Grand Chariot for Jagannath, Baladev and Subhadra Maharani</p>`
-        },
-        {
-            id: 1,
-            name: '🎙 Stage',
-            image: {
-                imageSrc: './Diwali/stage.jpeg',
-                imageAlt: "Stage for performances, seating for guests, tents and transportation costs",
-            },
-            description: `<p>Stage for performances, seating for guests, tents and transportation costs</p>`
-        },
-        {
-            id: 2,
             name: '🏟 Venue',
             image: {
                 imageSrc: './Diwali/Venue.jpeg',
@@ -30,34 +12,16 @@ const init = {
             description: `<p>Reservation of a spacious venue for the event</p>`
         },
         {
-            id: 3,
-            name: '🪞 Deities Shringaar',
-            image: {
-                imageSrc: './Diwali/Deities.jpeg',
-                imageAlt: "Decorations and travel for Deities from Radhadesh",
-            },
-            description: `<p>Decorations and travel for Deities from Radhadesh</p>`
-        },
-        {
-            id: 4,
+            id: 1,
             name: '🥧 Prasadam',
             image: {
                 imageSrc: './Diwali/Prasadam.jpeg',
-                imageAlt: "Serving delicious vegetarian food (Jagannath's Prasad) to 5000 people at Dam Square",
+                imageAlt: "Delicious vegetarian food offered to The Lord",
             },
-            description: `<p>Serving delicious vegetarian food (Jagannath's Prasad) to 5000 people at Dam Square</p>`
+            description: `<p>Delicious vegetarian food offered to The Lord</p>`
         },
         {
-            id: 5,
-            name: '🔊 Sound System',
-            image: {
-                imageSrc: './Diwali/ss.jpeg',
-                imageAlt: "Sound System for a world class kirtan event",
-            },
-            description: `<p>Sound System for a world class kirtan event</p>`
-        },
-        {
-            id: 6,
+            id: 2,
             name: '💐 Flowers',
             image: {
                 imageSrc: './Diwali/Flowers.jpeg',
@@ -66,7 +30,16 @@ const init = {
             description: `<p>Flowers for the Deities and hall decorations</p>`
         },
         {
-            id: 7,
+            id: 3,
+            name: '🎭 Drama',
+            image: {
+                imageSrc: './Diwali/Drama.jpeg',
+                imageAlt: "Preparations for drama portraying the pastimes of Lord Rama",
+            },
+            description: `<p>Preparations for drama portraying the pastimes of Lord Rama</p>`
+        },
+        {
+            id: 4,
             name: '🧩 Miscellaneous',
             image: {
                 imageSrc: './Diwali/Misc.jpeg',

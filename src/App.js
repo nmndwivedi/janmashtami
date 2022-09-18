@@ -6,7 +6,7 @@ import { MetaDecorator } from './Components'
 function App() {
   return (
     <Router>
-      <MetaDecorator description="Join us for a fantasic Janmashtami celebration in Amsterdam!" title="Janmashtami 2022 ISKCON Amsterdam" imgUrl="/Diwali/jm.jpeg" imgAlt="Janmashtami Celebration in Amsterdam!"/>
+      <MetaDecorator description="Join us for a fantasic Janmashtami celebration in Amsterdam!" title="Janmashtami 2022 ISKCON Amsterdam" imgUrl="/Diwali/sitaram2.jpeg" imgAlt="Janmashtami Celebration in Amsterdam!"/>
       <Switch>
         <Route path="/" exact component={Contribute} />
         <Route path="/contribute" exact component={Contribute} />
